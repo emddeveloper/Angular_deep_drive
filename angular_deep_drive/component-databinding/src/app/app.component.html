@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <app-server-input
+    (serverCreated)="onServerCreated($event)"
+    (serverBlueprintCreated)="onServerBlueprintCreated($event)"
+  ></app-server-input>
+  <hr />
+  <app-server-details
+    *ngFor="let singleAppData of appdata"
+    [appserverdata__]="singleAppData"
+  ></app-server-details>
+</div>

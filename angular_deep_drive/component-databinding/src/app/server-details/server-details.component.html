@@ -1,0 +1,15 @@
+<div class="card">
+  <div
+    class="card-header text-white"
+    [ngClass]="appserverdata__.type === 'server' ? 'bg-primary' : 'bg-warning'"
+  >
+    This is the a {{ appserverdata__.type }} and its name :-
+    {{ appserverdata__.name }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ appserverdata__.name }}</h5>
+    <p class="card-text">
+      {{ appserverdata__.desc }}
+    </p>
+  </div>
+</div>
