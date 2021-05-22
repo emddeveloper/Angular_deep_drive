@@ -1,0 +1,16 @@
+<div class="list-group">
+  <a
+    class="list-group-item list-group-item-action"
+    aria-current="true"
+    *ngFor="let searchResult of serachResults; let i = index"
+    [ngClass]="{ active: i === getIndex }"
+    (click)="getIndex = i"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ searchResult.title }}</h5>
+      <small>{{ searchResult.timestamp }}</small>
+    </div>
+    <p class="mb-1" [innerHtml]="searchResult.snippet"></p>
+    <small>{{ searchResult.wordcount }}</small>
+  </a>
+</div>
