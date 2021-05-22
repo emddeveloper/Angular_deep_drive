@@ -14,6 +14,6 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
     this.wikiservice.currentData$.subscribe((m) => (this.serachResults = m));
   }
   ngOnDestroy() {
-    // this.wikiservice.currentData$.unsubscribe();
+    // this.wikiservice.currentData$.unsubscribe(); not working??
   }
 }
