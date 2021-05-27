@@ -1,0 +1,145 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<h1 appChangeBG class="mb-5">
+  We have created a custom directive appChangeBG, it will change the background
+  color yellow
+</h1>
+<h1 appChangeBGByRenderer class="mb-5">
+  We have created a custom directive appChangeBGByRenderer, it will change the
+  background color red by using renderer2 .This is the best way to manipulate bg
+  color.
+</h1>
+<p>
+  When ever hover on the below items then the background color will change using
+  <b>@HostListner Renderer2 and ElementRef</b>
+</p>
+<div class="card mb-5" style="width: 18rem">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" appchangeBgByMouseEvent>An item</li>
+    <li class="list-group-item" appchangeBgByMouseEvent>A second item</li>
+    <li class="list-group-item" appchangeBgByMouseEvent>A third item</li>
+  </ul>
+</div>
+<p>
+  When ever hover on the below items then the background color will change using
+  <b>@HostListner @HostBinding</b>
+</p>
+<div class="card" style="width: 18rem">
+  <ul class="list-group list-group-flush mb-5">
+    <li class="list-group-item" appChangebgbyhostlistnerhostbinding>An item</li>
+    <li class="list-group-item" appChangebgbyhostlistnerhostbinding>
+      A second item
+    </li>
+    <li class="list-group-item" appChangebgbyhostlistnerhostbinding>
+      A third item
+    </li>
+  </ul>
+</div>
+
+<p>
+  Property binding of directive using @Input--- background color will change as
+  per the property values
+  <b>@HostListner @HostBinding @Input</b>
+</p>
+<div class="card" style="width: 18rem">
+  <ul class="list-group list-group-flush">
+    <li
+      class="list-group-item"
+      appDirectivePropertyBinding
+      [defaultcolor]="'orange'"
+      [highlightcolor]="'red'"
+    >
+      An item
+    </li>
+    <li
+      class="list-group-item"
+      appDirectivePropertyBinding
+      [defaultcolor]="'black'"
+      [highlightcolor]="'pink'"
+    >
+      A second item
+    </li>
+    <li
+      class="list-group-item"
+      appDirectivePropertyBinding
+      [defaultcolor]="'blue'"
+      [highlightcolor]="'yellow'"
+    >
+      A third item
+    </li>
+  </ul>
+</div>
+
+<h2 class="mt-5">
+  Custom structural directive like *ngIf using
+  <b>ViewContainerRef and TemplateRef</b>
+</h2>
+<button
+  class="btn btn-primary"
+  (click)="condition ? (condition = false) : (condition = true)"
+>
+  Change the condition {{ condition }}
+</button>
+<div class="card mt-5 mb-5" *appCustomstructural="condition">
+  <div class="card-body">This is some text within a card body.</div>
+</div>
