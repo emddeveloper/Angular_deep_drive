@@ -13,6 +13,7 @@ export class CustomstructuralDirective {
       this.vcref.createEmbeddedView(this.templateref);
     } else {
       this.vcref.clear();
+      //
     }
   }
 }
