@@ -1,0 +1,23 @@
+<div class="d-flex align-items-start">
+  <div
+    class="nav flex-column nav-pills me-3"
+    role="tablist"
+    aria-orientation="vertical"
+  >
+    <ng-container *ngFor="let user of users; let index = index">
+      <button
+        class="nav-link mb-2 outline"
+        type="button "
+        role="tab"
+        aria-controls="v-pills-home"
+        aria-selected="true"
+        [routerLink]="['/users', user.id]"
+      >
+        {{ user.name }}
+      </button>
+    </ng-container>
+  </div>
+  <div class="tab-content">
+    <app-user></app-user>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+{{ users | json }}
+<br />
+<input [(ngModel)]="users.name" />
+<br />
+<input [(ngModel)]="users.age" />
+<button (click)="updateUsers(users.id)">Submit</button>
